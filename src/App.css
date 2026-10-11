@@ -1,0 +1,499 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+:root {
+    font-family: "Inter", "Segoe UI", sans-serif;
+    color: #e8edf8;
+    background: #0b1020;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+
+    --background: #0b1020;
+    --panel: #131c30;
+    --border: #26334b;
+    --text: #e8edf8;
+    --muted: #93a2bb;
+    --primary: #818cf8;
+    --primary-dark: #6366f1;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    background:
+        radial-gradient(
+            ellipse at top left,
+            rgba(99, 102, 241, 0.13),
+            transparent 40%
+        ),
+        var(--background);
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.app-container {
+    width: min(1200px, 94%);
+    margin: 0 auto;
+    padding: 36px 0 20px;
+}
+
+.hero {
+    text-align: center;
+    padding: 35px 20px 45px;
+}
+
+.hero-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 66px;
+    height: 66px;
+    margin-bottom: 17px;
+    border: 1px solid #3b4771;
+    border-radius: 20px;
+    background: #202949;
+    font-size: 30px;
+}
+
+.eyebrow,
+.section-label {
+    margin: 0 0 10px;
+    color: #a5b4fc;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: clamp(30px, 5vw, 48px);
+    font-weight: 800;
+    letter-spacing: -1.8px;
+    line-height: 1.2;
+}
+
+.hero-description {
+    max-width: 560px;
+    margin: 15px auto 25px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.stat-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 130px;
+    gap: 5px;
+    padding: 14px 20px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: rgba(19, 28, 48, 0.8);
+}
+
+.stat-number {
+    color: #c7d2fe;
+    font-size: 21px;
+    font-weight: 800;
+}
+
+.stat-label {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+.panel {
+    min-width: 0;
+    padding: 28px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: rgba(19, 28, 48, 0.92);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+}
+
+.section-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 25px;
+}
+
+.section-heading h2 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.section-description {
+    margin: 9px 0 0;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.heading-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 43px;
+    height: 43px;
+    border: 1px solid #35436b;
+    border-radius: 12px;
+    background: #202949;
+    color: #c7d2fe;
+    font-size: 23px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.form-group label {
+    color: #d8e0ef;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    min-height: 46px;
+    padding: 12px 14px;
+    outline: none;
+    border: 1px solid #34435d;
+    border-radius: 10px;
+    background: #0c1426;
+    color: var(--text);
+    font-size: 14px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input::placeholder {
+    color: #63718a;
+}
+
+.form-group input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.12);
+}
+
+.form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.primary-button,
+.secondary-button {
+    min-height: 44px;
+    padding: 11px 19px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.primary-button {
+    border: 1px solid var(--primary-dark);
+    background: var(--primary-dark);
+    color: white;
+}
+
+.primary-button:hover {
+    transform: translateY(-1px);
+    background: #5558e9;
+}
+
+.secondary-button {
+    border: 1px solid #42506a;
+    background: #202b40;
+    color: #e2e8f0;
+}
+
+.secondary-button:hover {
+    background: #2a3852;
+}
+
+.message {
+    margin-top: 20px;
+    padding: 13px 15px;
+    border: 1px solid;
+    border-radius: 10px;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.message.success {
+    border-color: #276749;
+    background: #102c29;
+    color: #86efac;
+}
+
+.message.error {
+    border-color: #7f303e;
+    background: #321923;
+    color: #fda4af;
+}
+
+.record-count {
+    flex-shrink: 0;
+    padding: 8px 12px;
+    border: 1px solid #35436b;
+    border-radius: 9px;
+    background: #202949;
+    color: #c7d2fe;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    white-space: nowrap;
+}
+
+thead {
+    background: #0d1629;
+}
+
+th {
+    padding: 15px 14px;
+    color: #93a2bb;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+td {
+    padding: 17px 14px;
+    border-bottom: 1px solid #253149;
+    color: #dce5f5;
+    font-size: 13px;
+}
+
+tbody tr {
+    transition: background 0.2s;
+}
+
+tbody tr:hover {
+    background: #18243a;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr.editing-row {
+    background: rgba(99, 102, 241, 0.1);
+}
+
+.student-identity {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    border: 1px solid #46558a;
+    border-radius: 11px;
+    background: #283458;
+    color: #c7d2fe;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.student-name {
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.course-badge {
+    display: inline-block;
+    padding: 6px 10px;
+    border: 1px solid #34435d;
+    border-radius: 7px;
+    background: #1c2940;
+    color: #c7d2fe;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.marks-value {
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.marks-total {
+    margin-left: 3px;
+    color: #74829b;
+    font-size: 11px;
+}
+
+.action-buttons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.edit-button,
+.delete-button {
+    padding: 8px 11px;
+    border: 1px solid;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    transition: background 0.2s;
+}
+
+.edit-button {
+    border-color: #414f91;
+    background: #222d53;
+    color: #c7d2fe;
+}
+
+.edit-button:hover:not(:disabled) {
+    background: #303f75;
+}
+
+.delete-button {
+    border-color: #753748;
+    background: #351e2b;
+    color: #fda4af;
+}
+
+.delete-button:hover {
+    background: #502536;
+}
+
+.empty-state {
+    padding: 45px 20px;
+    text-align: center;
+}
+
+.empty-icon {
+    margin-bottom: 12px;
+    font-size: 36px;
+}
+
+.empty-state h3 {
+    margin: 0;
+    font-size: 17px;
+}
+
+.empty-state p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.footer {
+    padding: 32px 10px 12px;
+    color: #77859e;
+    font-size: 11px;
+    line-height: 1.8;
+    text-align: center;
+}
+
+@media (max-width: 650px) {
+    .app-container {
+        width: 94%;
+        padding-top: 15px;
+    }
+
+    .hero {
+        padding: 25px 8px 30px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+        letter-spacing: -1px;
+    }
+
+    .hero-description {
+        font-size: 13px;
+    }
+
+    .stat-card {
+        min-width: 95px;
+        padding: 12px;
+    }
+
+    .panel {
+        padding: 19px 15px;
+        border-radius: 14px;
+    }
+
+    .section-heading h2 {
+        font-size: 19px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 17px;
+    }
+
+    .record-count {
+        padding: 7px 9px;
+        font-size: 10px;
+    }
+
+    th,
+    td {
+        padding: 13px 10px;
+    }
+}
